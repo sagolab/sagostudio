@@ -1,6 +1,4 @@
-import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef } from 'react'
 
 import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
@@ -8,115 +6,52 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
 export default async function IndexPage() {
-  
   return (
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-        <div className="items-left container flex max-w-[84rem] flex-col gap-2 text-left">
-          <h1 className="font-heading text-3xl opacity-25 sm:text-5xl md:text-6xl lg:text-7xl">
-            Sago Studio
+        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+          <Link
+            href={siteConfig.links.twitter}
+            className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+            target="_blank"
+          >
+            Follow along on X
+          </Link>
+          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+            Welcome to Sago Studio
           </h1>
-          <h2 className="font-heading text-7xl sm:text-8xl md:text-8xl lg:text-9xl">
-            AI future starts now with our new mobile innovator
-          </h2>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Revolutionary AI-Driven Mobile Apps Designed for the Future
+            At Sago Studio, we&apos;re driven by a relentless pursuit of innovation. Since our inception, we&apos;ve empowered millions of users worldwide through our cutting-edge apps, including Chativon.com, Interioraty.com, AI Photo and Art Generation, LingoAI, and more.
           </p>
-          <div className="flex max-w-[64rem] gap-4 ">
+          <div className="space-x-4">
+            <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+              Get Started
+            </Link>
             <Link
-              href={siteConfig.links.twitter}
-              className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+              href={siteConfig.links.github}
               target="_blank"
+              rel="noreferrer"
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
             >
-              Follow us on X
+              GitHub
             </Link>
           </div>
         </div>
       </section>
-      
-      <section
-        id="image"
-        className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[84rem] md:grid-cols-3">
-          <Image
-                alt="The MaySew Design"
-                className="rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
-                style={{ transform: 'translate3d(0, 0, 0)' }}
-                src={`https://images.unsplash.com/photo-1637666505754-7416ebd70cbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80`}
-                width={720}
-                height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-              />
-            <Image
-                alt="The MaySew Design"
-                className="hidden rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 sm:block"
-                style={{ transform: 'translate3d(0, 0, 0)' }}
-                src={`https://images.unsplash.com/photo-1625014053925-88bef4805a76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2728&q=80`}
-                width={720}
-                height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 40vw,
-                  (max-width: 1536px) 23vw,
-                  25vw"
-              />
-            <Image
-                alt="The MaySew Design"
-                className="hidden rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 sm:block"
-                style={{ transform: 'translate3d(0, 0, 0)' }}
-                src={`https://images.unsplash.com/photo-1635492491273-455af7728453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3060&q=80`}
-                width={720}
-                height={480}
-                sizes="(max-width: 640px) 100vw,
-                  (max-width: 1280px) 50vw,
-                  (max-width: 1536px) 33vw,
-                  25vw"
-              />
-            </div>
-      </section>
-
-      <section
-        id="about"
-        className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32"
-      >
-        <div className="items-right container flex max-w-[84rem] flex-col gap-2 text-right">
-          <h1 className="font-heading text-3xl opacity-25 sm:text-5xl md:text-6xl lg:text-7xl">
-            At Sago Studio
-          </h1>
-          <h2 className="font-heading text-7xl sm:text-8xl md:text-8xl lg:text-9xl">
-            we&apos;re driven by a relentless pursuit of innovation.
-          </h2>
-          <p className="max-w-[84rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Since our inception, we&apos; ve empowered millions of users
-            worldwide through our cutting-edge apps, including Chativon.com,
-            Interioraty.com, AI Photo and Art Generation, LingoAI, and more.
-          </p>
-        </div>
-      </section>
-
       <section
         id="features"
         className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
       >
-        <div className="mx-auto flex max-w-[68rem] flex-col items-center space-y-4 text-center">
-        <svg viewBox="0 0 24 24" className="h-12 w-12 fill-current">
-                <path d="M0 12C0 5.373 5.373 0 12 0c4.873 0 9.067 2.904 10.947 7.077l-15.87 15.87a11.981 11.981 0 0 1-1.935-1.099L14.99 12H12l-8.485 8.485A11.962 11.962 0 0 1 0 12Zm12.004 12L24 12.004C23.998 18.628 18.628 23.998 12.004 24Z" />
-              </svg>
-        <h1 className="font-heading text-3xl opacity-25 sm:text-5xl md:text-6xl lg:text-7xl">
-        Creating the Impossible? Maybe.
-          </h1>
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-           We&apos;re All In.
+            Features
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Much like the pioneers in technology, we forge our own path in technology and product development. Our story began, and in no time, we garnered a community of millions. Yet, our journey has just begun. We&apos;re committed to pioneering and pushing boundaries, striving to create something that transcends the ordinary.
-
-
+            This project is an experiment to see how a modern app, with features
+            like auth, subscriptions, API routes, and static pages would work in
+            Next.js 13 app dir.
           </p>
         </div>
-        {/* use later:
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
           <div className="relative overflow-hidden rounded-lg border bg-background p-2">
             <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
@@ -210,31 +145,26 @@ export default async function IndexPage() {
             built using Contentlayer and MDX.
           </p>
         </div>
-        */}
       </section>
       <section id="open-source" className="container py-8 md:py-12 lg:py-24">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Functional Meets Gorgeous
+            Proudly Open Source
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Every product we craft is not just user-friendly; it&apos;s a visual masterpiece. We believe in making the complex simple and the beautiful functional.
-
-<br />{" "}
-            Discover our stunning Products.
-          </p>
-          <div className="space-x-4">
-            <Link href="/products" className={cn(buttonVariants({ size: "lg" }))}>
-              Products
-            </Link>
+            Taxonomy is open source and powered by open source software. <br />{" "}
+            The code is available on{" "}
             <Link
-              href="/careers"
+              href={siteConfig.links.github}
+              target="_blank"
               rel="noreferrer"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+              className="underline underline-offset-4"
             >
-              Careers
+              GitHub
             </Link>
-          </div>
+            .{" "}
+          </p>
+          
         </div>
       </section>
     </>

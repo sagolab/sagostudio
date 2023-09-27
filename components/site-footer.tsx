@@ -19,7 +19,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              shadcn
+              Paul Vu
             </a>
             . Hosted on{" "}
             <a
@@ -32,12 +32,12 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             </a>
             . Illustrations by{" "}
             <a
-              href="https://popsy.co"
+              href="https://dribbble.com/sagolab"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              Popsy
+              Dribbble
             </a>
             . The source code is available on{" "}
             <a
